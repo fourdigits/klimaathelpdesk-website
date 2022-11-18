@@ -63,7 +63,7 @@ AWS_ACCESS_KEY_ID = env("DJANGO_AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env("DJANGO_AWS_SECRET_ACCESS_KEY")
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_STORAGE_BUCKET_NAME = env("DJANGO_AWS_STORAGE_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = 'media.klimaathelpdesk.org'
+AWS_S3_CUSTOM_DOMAIN = "media.klimaathelpdesk.org"
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_QUERYSTRING_AUTH = False
 # DO NOT change these unless you know what you're doing.
@@ -77,9 +77,7 @@ AWS_DEFAULT_ACL = None
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_S3_REGION_NAME = env("DJANGO_AWS_S3_REGION_NAME", default=None)
 
-AWS_HEADERS = {
-    'Access-Control-Allow-Origin': '*'
-}
+AWS_HEADERS = {"Access-Control-Allow-Origin": "*"}
 
 # STATIC
 # ------------------------
@@ -91,7 +89,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # region http://stackoverflow.com/questions/10390244/
 # Full-fledge class: https://stackoverflow.com/a/18046120/104731
 from storages.backends.s3boto3 import S3Boto3Storage  # noqa E402
-
 
 # class StaticRootS3Boto3Storage(S3Boto3Storage):
 #     location = "static"
@@ -126,14 +123,13 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa F405
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
-    "DJANGO_DEFAULT_FROM_EMAIL", default="Helpdesk Climate<noreply@mail.helpdesk-climate.org>"
+    "DJANGO_DEFAULT_FROM_EMAIL",
+    default="Helpdesk Climate<noreply@mail.helpdesk-climate.org>",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env(
-    "DJANGO_EMAIL_SUBJECT_PREFIX", default="[Helpdesk Climate]"
-)
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[Helpdesk Climate]")
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -148,9 +144,9 @@ INSTALLED_APPS += ["anymail"]  # noqa F405
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
 ANYMAIL = {
-   "MAILGUN_API_KEY": env("MAILGUN_API_KEY"),
-   "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),
-   "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),
+    "MAILGUN_API_KEY": env("MAILGUN_API_KEY"),
+    "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),
+    "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),
 }
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST= env("EMAIL_HOST")
@@ -211,5 +207,5 @@ LOGGING = {
 
 # GITLAB
 # ------------------------------------------------------------------------------
-GITLAB_PERSONAL_TOKEN = env('GITLAB_PERSONAL_TOKEN')
-GITLAB_PROJECT_ID = env('GITLAB_PROJECT_ID')
+GITLAB_PERSONAL_TOKEN = env("GITLAB_PERSONAL_TOKEN")
+GITLAB_PROJECT_ID = env("GITLAB_PROJECT_ID")

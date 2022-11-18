@@ -29,7 +29,10 @@ TIME_ZONE = "CET"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "nl"
 LANGUAGES = [
-    ('nl', _('Dutch'),),
+    (
+        "nl",
+        _("Dutch"),
+    ),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -42,7 +45,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = [ROOT_DIR.path("locale")]
 
-FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 # DATABASES
 # ------------------------------------------------------------------------------
@@ -81,21 +84,21 @@ THIRD_PARTY_APPS = [
 ]
 
 WAGTAIL_APPS = [
-    'wagtail.contrib.forms',
-    'wagtail.contrib.modeladmin',
-    'wagtail.contrib.redirects',
-    'wagtail.contrib.routable_page',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail.core',
-    'modelcluster',
-    'taggit',
+    "wagtail.contrib.forms",
+    "wagtail.contrib.modeladmin",
+    "wagtail.contrib.redirects",
+    "wagtail.contrib.routable_page",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail.core",
+    "modelcluster",
+    "taggit",
 ]
 
 LOCAL_APPS = [
@@ -161,7 +164,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 # STATIC
@@ -173,7 +176,7 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path("static")),
-    str(ROOT_DIR.path('assets')),
+    str(ROOT_DIR.path("assets")),
 ]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -226,11 +229,11 @@ TEMPLATES = [
 
 # Webpackloader
 WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': str(ROOT_DIR('webpack-stats.json')),
-        'POLL_INTERVAL': 0.1,
-        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    "DEFAULT": {
+        "BUNDLE_DIR_NAME": "bundles/",
+        "STATS_FILE": str(ROOT_DIR("webpack-stats.json")),
+        "POLL_INTERVAL": 0.1,
+        "IGNORE": [".+\.hot-update.js", ".+\.map"],
     }
 }
 
@@ -282,7 +285,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-                      "%(process)d %(thread)d %(message)s"
+            "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
@@ -313,8 +316,8 @@ SOCIALACCOUNT_ADAPTER = "klimaat_helpdesk.users.adapters.SocialAccountAdapter"
 ## Custom Config
 # Wagtail
 
-WAGTAIL_SITE_NAME = 'KlimaatHelpdesk'
-BASE_URL = 'https://www.klimaathelpdesk.org'
+WAGTAIL_SITE_NAME = "KlimaatHelpdesk"
+BASE_URL = "https://www.klimaathelpdesk.org"
 
 # Taggit
 TAGGIT_CASE_INSENSITIVE = True
