@@ -1,6 +1,5 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
-
 from wagtail.core.models import Page
 from wagtail.search.models import Query
 
@@ -8,8 +7,8 @@ from klimaat_helpdesk.cms.models import Answer
 
 
 def search(request):
-    search_query = request.GET.get('query', None)
-    page = request.GET.get('page', 1)
+    search_query = request.GET.get("query", None)
+    page = request.GET.get("page", 1)
 
     # Search
     if search_query:
@@ -30,8 +29,12 @@ def search(request):
     except EmptyPage:
         search_results = paginator.page(paginator.num_pages)
 
-    return render(request, 'search/search.html', {
-        "intro_class": "blog",
-        'search_query': search_query,
-        'results': search_results,
-    })
+    return render(
+        request,
+        "search/search.html",
+        {
+            "intro_class": "blog",
+            "search_query": search_query,
+            "results": search_results,
+        },
+    )

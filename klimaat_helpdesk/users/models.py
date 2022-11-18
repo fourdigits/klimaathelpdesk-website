@@ -7,7 +7,6 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
-
 logger = getLogger(__name__)
 
 
@@ -21,7 +20,7 @@ class User(AbstractUser):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     try:
-        group = Group.objects.get(name='Editors')
+        group = Group.objects.get(name="Editors")
         group.user_set.add(instance)
     except Group.DoesNotExist:
-        logger.info('Group Editor does not exist')
+        logger.info("Group Editor does not exist")
